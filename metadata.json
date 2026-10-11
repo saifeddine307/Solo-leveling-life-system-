@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix Remix Remix Solo Leveling Life System",
+  "description": "A high-end Solo Leveling style life gamification web app featuring player stats, quest system, skill radar, XP history, and Web Audio SFX.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

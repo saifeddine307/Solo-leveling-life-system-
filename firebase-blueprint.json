@@ -1,0 +1,74 @@
+{
+  "entities": {
+    "SystemState": {
+      "title": "SystemState",
+      "description": "Authoritative domain state for the Hunter System including progression, ledger, quests, and skills",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "The unique Firebase Auth UID of the owner"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of the latest domain state update"
+        },
+        "player": {
+          "type": "object",
+          "description": "Player progression stats, level, XP, gold, and attributes"
+        },
+        "quests": {
+          "type": "array",
+          "description": "List of active and recurring quests"
+        },
+        "skills": {
+          "type": "array",
+          "description": "Awakened hunter skills in the matrix"
+        },
+        "achievements": {
+          "type": "array",
+          "description": "Hunter achievement unlock status"
+        },
+        "history": {
+          "type": "array",
+          "description": "Historical XP and progression logs"
+        },
+        "logs": {
+          "type": "array",
+          "description": "System event audit logs"
+        },
+        "goals": {
+          "type": "array",
+          "description": "Hunter long-term and short-term goals"
+        },
+        "projects": {
+          "type": "array",
+          "description": "Active projects and deep work contracts"
+        },
+        "milestones": {
+          "type": "array",
+          "description": "Project milestones and deliverables"
+        },
+        "workSessions": {
+          "type": "array",
+          "description": "Focus and deep work pomodoro sessions"
+        },
+        "rewardTransactions": {
+          "type": "array",
+          "description": "Authoritative idempotent ledger of claimed rewards"
+        },
+        "settings": {
+          "type": "object",
+          "description": "User preferences and system configuration"
+        }
+      },
+      "required": ["userId", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/system/{docId}": {
+      "schema": "SystemState",
+      "description": "Private isolated domain state document for the authenticated hunter"
+    }
+  }
+}
